@@ -1,60 +1,92 @@
-# E-Commerce Customer Churn Prediction
+# SwiftBuy E-Commerce Customer Churn Prediction
 
-## 📌 Project Overview
-This project focuses on predicting customer churn for an e-commerce platform using machine learning. Churn prediction helps businesses retain valuable customers by identifying those at risk of leaving. By leveraging various customer attributes, we aim to build a predictive model that provides insights into churn patterns and improves customer retention strategies.
+## Project Overview
+Proyek ini bertujuan untuk memprediksi kemungkinan pelanggan e-commerce melakukan churn (berhenti bertransaksi dalam periode tertentu) menggunakan pendekatan machine learning.
+Dengan prediksi ini, perusahaan dapat mengidentifikasi pelanggan yang berisiko tinggi dan menerapkan strategi retensi yang lebih tepat sasaran untuk mengurangi potensi kehilangan pendapatan.
 
-## 🗂 Dataset Information
-The dataset used for this project contains various features related to customer behavior and engagement, including:
-- **CityTier**: Customer's city classification
-- **CouponUsed**: Number of coupons used by the customer
-- **HourSpendOnApp**: Average hours spent on the application
-- **CashbackAmount**: Cashback amount received by the customer
-- **DaySinceLastOrder**: Number of days since the last order
-- **MaritalStatus**: Marital status of the customer
-- **Complain**: Whether the customer has made a complaint (1 = Yes, 0 = No)
-- **Churn**: Target variable (1 = Churned, 0 = Not Churned)
+## Dataset Information
+Dataset yang digunakan memuat atribut perilaku dan profil pelanggan, seperti:
+- **CityTier**: Klasifikasi kota tempat pelanggan tinggal
+- **CouponUsed**: Jumlah kupon yang pernah digunakan
+- **HourSpendOnApp**: Rata-rata waktu penggunaan aplikasi per hari
+- **CashbackAmount**: Total cashback yang diterima pelanggan
+- **DaySinceLastOrder**: Jumlah hari sejak terakhir melakukan pemesanan
+- **MaritalStatus**: Status pernikahan pelanggan
+- **Complain**: Pernah atau tidaknya pelanggan mengajukan keluhan (1 = Yes, 0 = No)
+- **Churn**: Variabel target (1 = Churn, 0 = No Churn)
 
-## 🎯 Objectives
-- Perform exploratory data analysis (EDA) to understand the dataset and detect patterns.
-- Preprocess the data, including handling missing values, encoding categorical variables, and feature scaling.
-- Train and evaluate various machine learning models for churn prediction.
-- Interpret model performance using appropriate evaluation metrics.
-- Provide actionable insights to improve customer retention.
+## Objectives
+- Melakukan EDA untuk memahami distribusi data dan pola perilaku pelanggan.
+- Membersihkan dan mempersiapkan data, termasuk penanganan missing values, encoding variabel kategorikal, dan scaling.
+- Membangun dan membandingkan beberapa model machine learning untuk memprediksi churn.
+- Mengidentifikasi fitur yang paling berpengaruh terhadap churn.
+- Memberikan rekomendasi strategi retensi berbasis data..
 
-## 🛠 Technologies Used
+## Technologies Used
 - **Python**
 - **Pandas, NumPy** (Data Manipulation)
 - **Matplotlib, Seaborn** (Data Visualization)
 - **Scikit-Learn** (Machine Learning)
 - **Jupyter Notebook** (Development Environment)
 
-## 🚀 Project Workflow
-1. **Data Preprocessing**
-   - Handling missing values and duplicates
-   - Encoding categorical variables
-   - Scaling numerical features
+## Project Workflow
+1. **Business Understanding**
+   - Memahami permasalahan churn dan dampak finansialnya.
+   - Menentukan metrik evaluasi utama (F2-score) yang lebih menekankan pada Recall, karena biaya kehilangan pelanggan jauh lebih tinggi dibanding biaya intervensi.
    
-2. **Exploratory Data Analysis (EDA)**
-   - Visualizing distributions and correlations
-   - Analyzing customer behavior patterns
+2. **Data Understanding**
+   - Meninjau kualitas data, memeriksa distribusi fitur, dan mendeteksi missing values serta outlier.
    
-3. **Model Training & Evaluation**
-   - Training multiple models (Logistic Regression, Decision Tree, Random Forest, AdaBoost, etc.)
-   - Evaluating models using accuracy, precision, recall, F1-score, and AUC-ROC
+3. **Data Preparation**
+   - Membersihkan data, mengatasi nilai yang hilang, melakukan encoding, scaling, serta penyeimbangan kelas menggunakan SMOTE.
    
-4. **Insights & Recommendations**
-   - Understanding feature importance
-   - Suggesting strategies to reduce churn
+4. **Modeling**
+   - Mencoba beberapa algoritma seperti Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, AdaBoost, KNN, dan XGBoost.
+   - Melakukan hyperparameter tuning pada model terbaik.
 
-## 📊 Results & Insights
-- The best-performing model achieved an accuracy of **XX%** with an AUC-ROC score of **XX**.
-- Feature importance analysis highlighted that **CashbackAmount**, **HourSpendOnApp**, and **DaySinceLastOrder** had the most significant impact on churn.
-- Customers with **low app engagement** and **longer days since last order** were more likely to churn, suggesting the need for improved re-engagement strategies.
+4. **Evaluation**
+   - Mengevaluasi model menggunakan F2-score, akurasi, recall, precision, dan AUC-ROC.
+   - Menganalisis confusion matrix untuk melihat proporsi kesalahan Type I & II.
 
-## 📌 Future Improvements
-- Fine-tuning hyperparameters to improve model accuracy.
-- Experimenting with other advanced models such as XGBoost or LightGBM.
-- Deploying the model as an API for real-time churn prediction.
+## Results & Insights
+- Model terbaik menghasilkan F2-score tertinggi dibanding model lainnya, dengan performa baik pada recall.
+- Fitur seperti CashbackAmount, HourSpendOnApp, dan DaySinceLastOrder menjadi indikator utama churn.
+- Pelanggan yang jarang membuka aplikasi dan lama tidak melakukan pesanan memiliki risiko churn lebih tinggi.
+  
+## Future Improvements
+- Menguji model lain seperti LightGBM atau CatBoost untuk melihat potensi peningkatan performa.
+- Mengintegrasikan data tambahan seperti aktivitas media sosial atau riwayat interaksi dengan customer service.
+- Mengembangkan API untuk prediksi churn secara real-time.
 
-## 📝 Conclusion
-This project provides valuable insights into customer churn prediction, helping e-commerce businesses proactively retain customers. By leveraging machine learning, companies can implement targeted strategies to enhance customer satisfaction and reduce churn rates.
+## Conclusion
+Dengan memanfaatkan machine learning, analisis ini membantu SwiftBuy mengenali pelanggan yang berisiko churn lebih dini.
+Pendekatan ini memungkinkan penerapan strategi retensi yang lebih efektif, mengurangi kehilangan pendapatan, dan meningkatkan loyalitas pelanggan.
+
+## Rekomendasi
+1. **Peningkatan Engagement Aplikasi**
+   - Kirimkan notifikasi personal (push notification atau email) untuk mengingatkan pelanggan yang jarang membuka aplikasi.
+   - Buat kampanye gamifikasi seperti reward points untuk meningkatkan waktu penggunaan aplikasi.
+  
+2. **Strategi Cashback yang Tepat**
+   - Berikan penawaran cashback yang lebih tinggi untuk pelanggan yang memiliki nilai pembelian tinggi tetapi jarang bertransaksi akhir-akhir ini.
+   - Sesuaikan besaran cashback berdasarkan segmen pelanggan untuk memaksimalkan retensi.
+  
+3. **Program Reaktivasi Pelanggan Lama**
+   - Untuk pelanggan dengan DaySinceLastOrder tinggi, kirimkan voucher eksklusif atau diskon khusus untuk pembelian berikutnya.
+   - Gunakan channel SMS atau WhatsApp untuk menjangkau pelanggan yang jarang membuka email.
+  
+4. **Penanganan Keluhan yang Proaktif**
+   - Pelanggan yang pernah mengajukan komplain memiliki risiko churn lebih tinggi. Tingkatkan kecepatan dan kualitas respon customer service.
+   - Buat follow-up otomatis setelah penyelesaian komplain untuk memastikan kepuasan pelanggan.
+
+5. **Pemantauan Model Secara Berkala**
+   - Lakukan retraining model setiap 3–6 bulan untuk menyesuaikan perubahan perilaku pelanggan.
+   -Integrasikan model ke dalam sistem CRM untuk deteksi churn secara real-time.
+
+## Future Improvement
+- Menguji model lain seperti LightGBM atau CatBoost untuk potensi peningkatan performa.
+- Mengintegrasikan data eksternal seperti aktivitas media sosial atau histori interaksi layanan pelanggan.
+- Mengembangkan API untuk prediksi churn yang dapat langsung digunakan oleh tim marketing.
+  
+  
+   
