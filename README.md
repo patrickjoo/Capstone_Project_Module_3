@@ -58,5 +58,3 @@ The dataset used for this project contains various features related to customer 
 
 ## 📝 Conclusion
 This project provides valuable insights into customer churn prediction, helping e-commerce businesses proactively retain customers. By leveraging machine learning, companies can implement targeted strategies to enhance customer satisfaction and reduce churn rates.
-
-📧 **Email**: kerinmulianto@gmail.com
